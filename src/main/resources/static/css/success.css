@@ -1,0 +1,144 @@
+body {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(-35deg, #ff9ff3, #feca57, #ff6b6b, #48dbfb, #1dd1a1);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+    margin: 0;
+    padding: 50px;
+    font-family: 'Kumbh Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.container {
+    padding: 20px;
+    width: 100%;
+    height: max-content;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background-color: rgb(255 255 255 / 25%);
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.container .all_input {
+    border-bottom: 1px solid #fff;
+    margin: 50px auto;
+}
+
+.all_input .find {
+    display: grid;
+    margin: 20px;
+}
+
+.find input {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    padding-left: 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 35px;
+    width: 300px;
+    margin: auto;
+}
+
+.find label {
+    margin-bottom: 5px;
+}
+
+.button {
+    position: relative;
+    padding: 1em 1.5em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    font-size: 18px;
+    margin: 1em auto;
+    width: 30%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.button.type {
+    color: #ffffff;
+}
+
+.button.type.type::after,
+.button.type.type::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    border: 2px solid;
+    transition: all 0.6s ease;
+    border-radius: 2px;
+}
+
+.button.type.type::after {
+    bottom: 0;
+    right: 0;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: #ffffff;
+    border-right-color: #ffffff;
+}
+
+.button.type.type::before {
+    top: 0;
+    left: 0;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+}
+
+.button.type.type:hover:after,
+.button.type.type:hover:before {
+    border-bottom-color: #ffffff;
+    border-right-color: #ffffff;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+.container .result_table {
+    padding: 25px;
+    overflow-x: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.result_table .quan_bao_the {
+    overflow: auto;
+}
+
+.result_table .content_table {
+    border-collapse: collapse;
+    border-color: #fff;
+    width: max-content;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.content_table th,
+td {
+    padding: 10px;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>File Upload Page</title>
+     <link th:href="@{/css/index.css}" rel="stylesheet" />
+<!--    <link rel="stylesheet" href="../static/css/index.css">-->
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="title_page">Import Student </h2>
+        <form action="/uploadFile" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" value="Browse File" />
+            <button type="submit" value="Button" class="button type">Button</button> <br /> <br />
+        </form>
+    </div>
+
+</body>
+
+</html>

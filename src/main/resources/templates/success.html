@@ -1,0 +1,96 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Success</title>
+         <link th:href="@{/css/success.css}" rel="stylesheet" />
+<!--    <link rel="stylesheet" href="../static/css/success.css">-->
+</head>
+
+
+
+<body>
+    <div class="container">
+        <div class="all_input">
+            <form method="post" th:object="${element}" th:action="@{/findById}">
+                <div class="find find_by_id">
+                    <label for="id">Find by id</label>
+                    <input type="text" placeholder="Enter id you want find" id="id" name="id">
+                </div>
+                <div class="find find_by_name">
+                    <label for="fullName">Find by name</label>
+                    <input type="text" placeholder="Enter name you want find" id="fullName" name="fullName">
+                </div>
+                <button type="submit" value="Button" class="button type">Tìm Kiếm</button> <br /> <br />
+            </form>
+
+
+        </div>
+        <div class="result_table">
+            <div class="quan_bao_the">
+                <table class="content_table" border="1">
+                    <tr>
+                        <th rowspan="2" class="id">Id</th>
+                        <th rowspan="2" class="school">Trường Tiểu Học</th>
+                        <th rowspan="2" class="addressSchool">Quận/Huyện</th>
+                        <th rowspan="2" class="codeStudent">Mã học sinh</th>
+                        <th rowspan="2" class="class">Lớp</th>
+                        <th rowspan="2" class="fullName">Họ và tên</th>
+                        <th colspan="3" class="birthday">Ngày sinh</th>
+                        <th rowspan="2" class="gender">Giới tính</th>
+                        <th rowspan="2">Nơi sinh</th>
+                        <th rowspan="2">Dân tộc</th>
+                        <th rowspan="2">Phone</th>
+                        <th rowspan="2">Hộ khẩu thường trú</th>
+                        <th colspan="8">Điểm sơ tuyển vòng 1</th>
+                        <th rowspan="2">Ghi chú</th>
+
+                    </tr>
+
+                    <tr>
+                        <th>Ngày</th>
+                        <th>Tháng</th>
+                        <th>Năm</th>
+                        <th>Tổng điểm năm lớp 1</th>
+                        <th>Tổng điểm năm lớp 2</th>
+                        <th>Tổng điểm năm lớp 3</th>
+                        <th>Tổng điểm năm lớp 4</th>
+                        <th>Tổng điểm năm lớp 5</th>
+                        <th>Tổng điểm kết quả 5 năm</th>
+                        <th>Điểm ưu tiên</th>
+                        <th>Tổng điểm sơ tuyển</th>
+
+                    </tr>
+
+                    <tr th:each="Student : ${studentsList}">
+                        <td th:text="${Student.id}"></td>
+                        <td th:text="${Student.getNameSchool()}"></td>
+                        <td th:text="${Student.getAddressSchool()}"></td>
+                        <td th:text="${Student.getCodeStudent()}"></td>
+                        <td th:text="${Student.getClassName()}"></td>
+                        <td th:text="${Student.getFullName()}"></td>
+                        <td th:text="${#dates.format(Student.getBirthday(), 'dd')}"></td>
+                        <td th:text="${#dates.format(Student.getBirthday(), 'MM')}"></td>
+                        <td th:text="${#dates.format(Student.getBirthday(), 'YYYY')}"></td>
+                        <td th:text="${Student.getGender()}"></td>
+                        <td th:text="${Student.getBorn()}"></td>
+                        <td th:text="${Student.getEthnic()}"></td>
+                        <td th:text="${Student.getPhone()}"></td>
+                        <td th:text="${Student.getAddress()}"></td>
+                        <td th:text="${Student.getTotalPoint1()}"></td>
+                        <td th:text="${Student.getTotalPoint2()}"></td>
+                        <td th:text="${Student.getTotalPoint3()}"></td>
+                        <td th:text="${Student.getTotalPoint4()}"></td>
+                        <td th:text="${Student.getTotalPoint5()}"></td>
+                        <td th:text="${Student.getTotalPoint()}"></td>
+                        <td th:text="${Student.getPriorityPoint()}"></td>
+                        <td th:text="${Student.getPrePoint()}"></td>
+                        <td th:text="${Student.getNote()}"></td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
